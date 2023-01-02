@@ -25,28 +25,28 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
 
 #### To Do:
 ->Detect Special Keys in WinLogger()
--[ESC]      
--[WIN]      
--[SPACE]    
--[INS]      
--[DEL]      
--[END]      
--[PGUP]     
--[PGDW]     
--[PRTSCR]   
--[SCRLK]    
--[PAUBRK]   
--[SCRDW]    
-~~-[ALT]~~  
-~~-[ENTER]~~            
-~~-[BACKSPACE]~~        
-~~-[LTCLK]~~            
-~~-[RTCLK]~~            
-~~-[SCRUP]~~            
-~~-[TAB]~~  
-~~-[CAPS]~~             
-~~-[SHIFT]~~            
-~~-[CTRL]~~             
+            -[ESC]      
+            -[WIN]      
+            -[SPACE]    
+            -[INS]      
+            -[DEL]      
+            -[END]      
+            -[PGUP]     
+            -[PGDW]     
+            -[PRTSCR]   
+            -[SCRLK]    
+            -[PAUBRK]   
+            -[SCRDW]    
+            ~~-[ALT]~~  
+            ~~-[ENTER]~~            
+            ~~-[BACKSPACE]~~        
+            ~~-[LTCLK]~~            
+            ~~-[RTCLK]~~            
+            ~~-[SCRUP]~~            
+            ~~-[TAB]~~  
+            ~~-[CAPS]~~             
+            ~~-[SHIFT]~~            
+            ~~-[CTRL]~~             
                    
 ->Create LinLogger() for linux      
 ->Create KeyDetector() (for both OS if possible)            
