@@ -49,7 +49,9 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
 ~~-[CTRL]~~             
                    
 ->Create LinLogger() for linux
-
+->Create KeyDetector() (for both OS if possible)
+->Make code chunks inheritable and modular
+->Wrap code around a front-end
 
 #### Bugs:
 ~~-> Double alphanumeric input detected in WinLogger()~~
