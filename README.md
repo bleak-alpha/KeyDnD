@@ -25,7 +25,7 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
 
 #### To Do:
 ->Detect Special Keys in WinLogger()
--[ESC]
+-[ESC]\n
 -[WIN]
 -[SPACE]
 -[INS]
