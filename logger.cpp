@@ -8,6 +8,7 @@ using namespace std;
 void WinLogging();
 
 int main() {
+    ShowWindow(GetConsoleWindow(), SW_HIDE); //Hide command prompt
     WinLogging();
 }
 
