@@ -1,4 +1,5 @@
 logger.exe
 .vscode/launch.json
 .vscode/tasks.json
+.vscode/settings.json
 log.txt
