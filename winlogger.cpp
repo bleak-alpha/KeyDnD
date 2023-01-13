@@ -6,7 +6,6 @@
 using namespace std;
 
 void WinLogging();
-void LinLogging();
 
 int main() {
     ShowWindow(GetConsoleWindow(), SW_HIDE); //Hide command prompt
