@@ -33,7 +33,7 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
 ->Make code chunks inheritable and modular      
 ->Wrap code around a front-end      
 
-~->Detect Special Keys in WinLogger()~
+~->Detect Special Keys in WinLogger()~               
             ~~-[ESC]~~          
             ~~-[WIN]~~          
             ~~-[SPACE]~~      
