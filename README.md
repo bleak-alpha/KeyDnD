@@ -20,23 +20,32 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
 ## Progress Report <a name = "progress"></a>
 
 #### Dev Notes:
+-> LinLogger() implemented in main() during alpha stage
 -> WinLogger() logs keystrokes into an external log file (log.txt)
 
 
 #### To Do:
-->Detect Special Keys in WinLogger()
-            -[ESC]          
-            -[WIN]          
-            -[SPACE]      
-            -[INS]         
-            -[DEL]         
-            -[END]        
-            -[PGUP]        
-            -[PGDW]       
-            -[PRTSCR]    
-            -[SCRLK]                
-            -[PAUBRK]    
-            -[SCRDW]                
+->LinLogger() for linux
+            -character mapping
+            -log storage      
+            ~~-detect keystrokes~~
+->Create KeyDetector() (for both OS if possible)            
+->Make code chunks inheritable and modular      
+->Wrap code around a front-end      
+
+~->Detect Special Keys in WinLogger()~
+            ~~-[ESC]~~          
+            ~~-[WIN]~~          
+            ~~-[SPACE]~~      
+            ~~-[INS]~~         
+            ~~-[DEL]~~         
+            ~~-[END]~~        
+            ~~-[PGUP]~~        
+            ~~-[PGDW]~~       
+            ~~-[PRTSCR]~~   
+            ~~-[SCRLK]~~                
+            ~~-[PAUBRK]~~    
+            ~~-[SCRDW]~~                
             ~~-[ALT]~~              
             ~~-[ENTER]~~                    
             ~~-[BACKSPACE]~~              
@@ -46,12 +55,7 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
             ~~-[TAB]~~              
             ~~-[CAPS]~~                         
             ~~-[SHIFT]~~                       
-            ~~-[CTRL]~~              
-                   
-->Create LinLogger() for linux      
-->Create KeyDetector() (for both OS if possible)            
-->Make code chunks inheritable and modular      
-->Wrap code around a front-end      
-
+            ~~-[CTRL]~~
+            ~~-[F1-F12]~~              
 #### Bugs:
 ~~-> Double alphanumeric input detected in WinLogger()~~
