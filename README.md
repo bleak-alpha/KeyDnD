@@ -20,15 +20,15 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
 ## Progress Report <a name = "progress"></a>
 
 #### Dev Notes:
--> LinLogger() implemented in main() during alpha stage
--> WinLogger() logs keystrokes into an external log file (log.txt)
+-> LinLogger() implemented in main() during alpha stage     
+-> WinLogger() logs keystrokes into an external log file (log.txt)        
 
 
 #### To Do:
-->LinLogger() for linux
-            -character mapping
+->LinLogger() for linux                
+            -character mapping           
             -log storage      
-            ~~-detect keystrokes~~
+            ~~-detect keystrokes~~              
 ->Create KeyDetector() (for both OS if possible)            
 ->Make code chunks inheritable and modular      
 ->Wrap code around a front-end      
@@ -58,4 +58,4 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
             ~~-[CTRL]~~                             
             ~~-[F1-F12]~~              
 #### Bugs:
-~~-> Double alphanumeric input detected in WinLogger()~~
+~~-> Double alphanumeric input detected in WinLogger()~~  
