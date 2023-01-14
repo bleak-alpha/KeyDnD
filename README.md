@@ -55,7 +55,7 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
             ~~-[TAB]~~              
             ~~-[CAPS]~~                         
             ~~-[SHIFT]~~                       
-            ~~-[CTRL]~~
+            ~~-[CTRL]~~                             
             ~~-[F1-F12]~~              
 #### Bugs:
 ~~-> Double alphanumeric input detected in WinLogger()~~
