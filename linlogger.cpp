@@ -8,6 +8,8 @@
 
 int main(int argc, char **arcgv){
     struct input_event ev; //monitors input event
+    
+    char *map = "..1234567890....qwertyuiop....asdfghjkl....zxcvbnm"; //character map
 
     int fd = open("/dev/input/event0", O_RDONLY); //grabs keyboard event handler, REF: $(man 3 fopen)
 
