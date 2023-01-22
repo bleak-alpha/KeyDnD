@@ -25,12 +25,12 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
 ~~-> LinLogger() implemented in main() during alpha stage~~ //event handler issue, keyboard event handler not responding                          
 
 
-#### To Do:
-->LinLogger_Alpha() //build 0.1.1
-            ~~-key mapper~~
-            -setting up logging
-            -exporting logs
-<sup>Keeping on hold right now, event handler issue</sup>
+#### To Do:                   
+->LinLogger_Alpha() //build 0.1.1                                       
+            ~~-key mapper~~                        
+            -setting up logging                                             
+            -exporting logs                                                                   
+<sup>Keeping on hold right now, event handler issue</sup>                             
 ->LinLogger() for linux                
             -character mapping           
             -log storage      
