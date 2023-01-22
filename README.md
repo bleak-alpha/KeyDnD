@@ -30,7 +30,7 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
             ~~-key mapper~~                        
             -setting up logging                                             
             -exporting logs                                                                   
-<sup>Keeping on hold right now, event handler issue</sup>                             
+<sub>Keeping on hold right now, event handler issue</sub>                             
 ->LinLogger() for linux                
             -character mapping           
             -log storage      
