@@ -20,17 +20,26 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
 ## Progress Report <a name = "progress"></a>
 
 #### Dev Notes:
--> LinLogger() implemented in main() during alpha stage     
--> WinLogger() logs keystrokes into an external log file (log.txt)        
+-> LinLogger_Alpha(), highjacking xserver process for intercepting keyboard event handler                    
+-> WinLogger() logs keystrokes into an external log file (log.txt)                  
+~~-> LinLogger() implemented in main() during alpha stage~~ //event handler issue, keyboard event handler not responding                          
 
 
 #### To Do:
+->LinLogger_Alpha() //build 0.1.1
+            ~~-key mapper~~
+            -setting up logging
+            -exporting logs
+<sup>Keeping on hold right now, event handler issue</sup>
 ->LinLogger() for linux                
             -character mapping           
             -log storage      
             ~~-detect keystrokes~~              
+
 ->Create KeyDetector() (for both OS if possible)            
+
 ->Make code chunks inheritable and modular      
+
 ->Wrap code around a front-end      
 
 ~->Detect Special Keys in WinLogger()~               
@@ -58,4 +67,5 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
             ~~-[CTRL]~~                             
             ~~-[F1-F12]~~              
 #### Bugs:
+~~-> running LinLogger.main() by sudo freezes keyboard event handler and crashing vm~~                               
 ~~-> Double alphanumeric input detected in WinLogger()~~  
