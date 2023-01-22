@@ -4,3 +4,4 @@ logger.exe
 .vscode/settings.json
 log.txt
 linlogger
+.vscode/c_cpp_properties.json
