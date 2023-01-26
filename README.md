@@ -27,9 +27,11 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
 
 #### To Do:                   
 ->LinLogger_Alpha() //build 0.1.1                                       
-            ~~-key mapper~~                        
             -setting up logging                                             
             -exporting logs                                                                   
+            ~~-key mapper~~                        
+            ~~-alloting signal handler~~ //using signal handler instead of event handler, ring-0 exploit potential                     
+            ~~-alloting display tracker~~
 <sub>Keeping on hold right now, event handler issue</sub>                             
 ->LinLogger() for linux                
             -character mapping           

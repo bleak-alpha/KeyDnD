@@ -165,3 +165,28 @@ namespace  {
         }
     }
 }
+
+int main(int argc, const char *const *argv) {
+    const timespec sleeptime = {0, 1000000}; //timedelay 1ms
+
+    std::ios_base::sync_with_stdio(false) //disable stream sync, NOTE: enabling this may cause deadlock
+
+    if (std::signal(SIGINT, &quitter) == SIG_ERR || std::signal(SIGTERM, &quitter) == SIG_ERR) { //finds signal handler
+        std::cerr << "Signal handler not found.\n";
+        std::exit(1);
+    }
+
+    display = XOpenDisplay(getenv("DISPLAY"));
+
+    if(!display) {
+        std::cerr << "Could not open display";
+        std::exit(1);
+    }
+
+    fill_mappings();
+
+    char keys[32], lastkeys[32];      //buffer for reading keys in previous keys state
+
+    std::fill(lastkeys, lastkeys + sizeof(lastkeys), 0);
+        
+}
