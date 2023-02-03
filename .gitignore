@@ -5,3 +5,4 @@ logger.exe
 log.txt
 linlogger
 .vscode/c_cpp_properties.json
+Logger/logs/
