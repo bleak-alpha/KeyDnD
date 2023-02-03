@@ -1,8 +1,5 @@
-logger.exe
 .vscode/launch.json
 .vscode/tasks.json
 .vscode/settings.json
-log.txt
-linlogger
 .vscode/c_cpp_properties.json
 Logger/logs/
