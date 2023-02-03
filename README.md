@@ -21,24 +21,28 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
 
 #### Dev Notes:
 -> LinLogger_Alpha(), highjacking xserver process for intercepting keyboard event handler                    
--> WinLogger() logs keystrokes into an external log file (log.txt)                  
+-> WinLogger() logs keystrokes into an external log file (logs/winlog.txt)                  
 ~~-> LinLogger() implemented in main() during alpha stage~~ //event handler issue, keyboard event handler not responding                          
 
 
 #### To Do:                   
+->Create KeyDetector (for both OS if possible)            
+        -WinDetector()                              
+        -LinDetector()                               
+
 ->LinLogger_Alpha() //build 0.1.1                                       
-            -setting up logging                                             
-            -exporting logs                                                                   
+            ~~-setting up logging~~                                             
+            ~~-exporting logs~~                                                                   
             ~~-key mapper~~                        
             ~~-alloting signal handler~~ //using signal handler instead of event handler, ring-0 exploit potential                     
             ~~-alloting display tracker~~                                                                             
+
 <sub>Keeping on hold right now, event handler issue</sub>                             
 ->LinLogger() for linux                
-            -character mapping           
-            -log storage      
+            ~~-character mapping~~           
+            ~~-log storage~~      
             ~~-detect keystrokes~~              
 
-->Create KeyDetector() (for both OS if possible)            
 
 ->Make code chunks inheritable and modular      
 
@@ -68,6 +72,7 @@ Detects keylogger by doing memory consumption analysis and outputs potential key
             ~~-[SHIFT]~~                       
             ~~-[CTRL]~~                             
             ~~-[F1-F12]~~              
-#### Bugs:
-~~-> running LinLogger.main() by sudo freezes keyboard event handler and crashing vm~~                               
+#### Bugs:                                                                         
+->running LinLogger.main() by sudo freezes keyboard event handler and crashing vm                                             
+~~-> compile errors for linlogger-alpha, cannot find <x11/xlib.h>~~ sol: $(g++ -ansi -Wall -Wno-deprecated-declarations -pedantic -O3 -o keylogger keylogger.cpp -L/usr/X11R6/lib -lX11)                
 ~~-> Double alphanumeric input detected in WinLogger()~~  
