@@ -1,13 +1,12 @@
-# Get the current list of processes
-$before = Get-Process
+function get-new-process-names {
+    $processes = Get-Process
+    $new_processes = @()
 
-# Wait for a period of time
-Start-Sleep -Seconds 5
+    foreach ($process in $processes) {
+        if ($process.Id -gt $last_pid) {
+            $new_processes += $process.Name
+        }
+    }
 
-# Get the list of processes after the wait period
-$after = Get-Process
-
-# Compare the two lists and print the new processes
-Write-Host "New processes:"
-$newProcesses = Compare-Object $before $after | Where-Object { $_.SideIndicator -eq '=>' }
-$newProcesses | Select-Object -Property ProcessName, Id, StartTime
+    return $new_processes
+}

@@ -1,0 +1,1 @@
+[LB][backspace][enter][UpArrow]LNP[LB][LB][esc]IHELLO[space]WORLD[enter]THIS[space]IS[space]A[space]TEST[space]FOR[space]WINDOWS[space]KEYLOGGER[enter][LB][[PrtScr][control]C

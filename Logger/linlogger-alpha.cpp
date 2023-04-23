@@ -220,7 +220,7 @@ int main(int argc, const char *const *argv)
 
   std::fill(lastkeys, lastkeys + sizeof(lastkeys), 0);
 
-  std::ofstream file_output ("logs/log.txt", std::ofstream::app);
+  std::ofstream file_output ("logs/linlog.txt", std::ofstream::app);
 
   /*
    * query keyboard in loop
